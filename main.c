@@ -61,7 +61,7 @@ int main()
     for (j = 0; j < 10; j++)
     {
         i = getrand(1, 117);
-	    printf("\n%d I: %s\t\n", i, Verbs[i-1].first);
+	printf("\n%d I: %s\t\n", i+1, Verbs[i-1].first);
         printf("Введите вторую и третью формы\n");
         scanf("%s %s", mass2, mass3);
         if (strcmp(mass2, Verbs[i-1].second) == 0)
