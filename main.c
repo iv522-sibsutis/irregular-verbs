@@ -24,3 +24,18 @@ typedef struct
     char second[200];
     char third[200];
 } VerbForms;
+
+void ReadWords(char *IFILE, VerbForms *verbs)
+{ 
+    int i;
+    FILE *f;
+    if((f = fopen(IFILE, "r")) == NULL)
+    {
+        perror("fopen");
+        exit(1);
+    }
+    for (i = 0; i < 117; i++)
+    {
+        fscanf(f, "%s %s %s", verbs[i].first, verbs[i].second, verbs[i].third);
+    }
+}
