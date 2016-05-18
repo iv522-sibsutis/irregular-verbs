@@ -1,3 +1,4 @@
+#include <time.h>
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -49,7 +50,7 @@ int main()
     int k=0;
     VerbForms Verbs[117];
     ReadWords(filename, Verbs);
-    int i, j;
+    int i, j, q;
 //    printf("Проверка всех:\n");
 //    for (i = 0; i < 117; i++)
 //    {
@@ -58,16 +59,50 @@ int main()
     time_t t;
     srand((unsigned) time(&t));
     i = 0;
-    for (j = 0; j < 10; j++)
+    printf("Выберите уровень сложности: easy-1\t medium-2\t hard-3\t, Введите цифру\n");
+    scanf("%d", &q);
+    if (q == 1)
     {
-        i = getrand(1, 117);
-	printf("\n%d I: %s\t\n", i+1, Verbs[i-1].first);
-        printf("Введите вторую и третью формы\n");
-        scanf("%s %s", mass2, mass3);
-        if (strcmp(mass2, Verbs[i-1].second) == 0)
-	{
-            k=k+5;
-	    printf("True\t");}
+        for (j = 0; j < 10; j++)
+        {
+            i = getrand(1, 35);
+	    printf("\n%d I: %s\t\n", j+1, Verbs[i-1].first);
+            printf("Введите вторую и третью формы\n");
+            scanf("%s %s", mass2, mass3);
+            if (strcmp(mass2, Verbs[i-1].second) == 0)
+	    {
+                k=k+5;
+	        printf("True\t");
+                }
+	        else
+                {
+	            printf("Falls\t");
+	        }
+	    if (strcmp(mass3, Verbs[i-1].third) == 0)
+	    {
+	        k=k+5;
+          	printf("true\n");
+            }
+	    else 
+            {
+                printf("Falls\n");
+            }
+
+        }
+    }
+    if (q == 2)
+    {
+        for (j = 0; j < 10; j++)
+        {
+            i = getrand(1, 85);
+	    printf("\n%d I: %s\t\n", j+1, Verbs[i-1].first);
+            printf("Введите вторую и третью формы\n");
+            scanf("%s %s", mass2, mass3);
+            if (strcmp(mass2, Verbs[i-1].second) == 0)
+	    {
+                k=k+5;
+	        printf("True\t");
+            }
 	    else
             {
 	        printf("Falls\t");
@@ -77,12 +112,44 @@ int main()
 	        k=k+5;
           	printf("true\n");
             }
-		else {printf("Falls\n");
-        }
+	    else 
+            {
+                printf("Falls\n");
+            }
 
+        }
+    }
+    if (q == 3) 
+    {
+        for (j = 0; j < 10; j++)
+        {
+            i = getrand(1, 117);
+	    printf("\n%d I: %s\t\n", j+1, Verbs[i-1].first);
+            printf("Введите вторую и третью формы\n");
+            scanf("%s %s", mass2, mass3);
+            if (strcmp(mass2, Verbs[i-1].second) == 0)
+	    {
+                k=k+5;
+	        printf("True\t");
+                }
+	        else
+                {
+	            printf("Falls\t");
+	        }
+	        if (strcmp(mass3, Verbs[i-1].third) == 0)
+	        {
+	            k=k+5;
+          	    printf("true\n");
+                }
+		else 
+                {
+                    printf("Falls\n");
+                }
+
+        }
     }
     printf("Result\t");
-    printf("%d %", k);
+    printf("%d percent", k);
     return 0;
 }
 
