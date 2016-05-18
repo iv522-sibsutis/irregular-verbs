@@ -17,3 +17,10 @@ double wtime()
     gettimeofday(&t, NULL);
     return (double)t.tv_sec + (double)t.tv_usec * 1E-6;
 }
+
+typedef struct
+{
+    char first[200];
+    char second[200];
+    char third[200];
+} VerbForms;
