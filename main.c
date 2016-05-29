@@ -24,7 +24,7 @@ typedef struct
     char first[200];
     char second[200];
     char third[200];
-} VerbForms;
+}   VerbForms;
 
 void ReadWords(char *IFILE, VerbForms *verbs)
 {
@@ -43,26 +43,18 @@ void ReadWords(char *IFILE, VerbForms *verbs)
 
 #define filename "Verbs.txt"
 
-int main()
+int check()
 {
+    int i, j, q, k;
+    printf("Выберите уровень сложности: easy-1\t medium-2\t hard-3\t, введите цифру\n");
+    scanf("%d", &q);
+
     char mass2[100];
     char mass3[100];
-    int k = 0;
     VerbForms Verbs[117];
+
     ReadWords(filename, Verbs);
-    int i, j, q;
-    //    printf("Проверка всех:\n");
-    //    for (i = 0; i < 117; i++)
-    //    {
-    //        printf("I: %s\tII: %s\tIII: %s\n", Verbs[i].first,
-    //        Verbs[i].second, Verbs[i].third);
-    //    }
-    time_t t;
-    srand((unsigned)time(&t));
-    i = 0;
-    printf("Выберите уровень сложности: easy-1\t medium-2\t hard-3\t, Введите "
-           "цифру\n");
-    scanf("%d", &q);
+
     if (q == 1)
     {
         for (j = 0; j < 10; j++)
@@ -147,7 +139,16 @@ int main()
             }
         }
     }
-    printf("Result\t");
-    printf("%d percent", k);
-    return 0;
+    return k;
+}
+
+int main()
+{
+    int k;
+    
+    time_t t;
+    srand((unsigned)time(&t));
+   
+    k = check();
+    printf("Result\t %d persent", k);
 }
