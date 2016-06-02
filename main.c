@@ -8,6 +8,6 @@ int main(int argc, const char** argv)
 
     k = check();
     printf("Result\t %d persent", k);
-    
+
     return 0;
 }
