@@ -7,9 +7,17 @@
 
 CTEST(solution_suite, easy) 
 {
-    const int solution = check();
 
-    const int expected_solution = 20;
+    char mass2;
+    char mass3;
+    int i = 0;
+    
+    VerbForms Verbs[117];
+    ReadWords(filename, Verbs);
+
+    float solution = check(mass2, mass3, i, Verbs);
+
+    const float expected_solution = 50;
 
     ASSERT_DBL_NEAR(expected_solution, solution);
 }
