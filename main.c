@@ -7,7 +7,8 @@ int main(int argc, const char** argv)
     int k;
 
     k = check();
-    printf("Result\t %d persent", k);
+
+    printf("Result\t %d", k);
 
     return 0;
 }
